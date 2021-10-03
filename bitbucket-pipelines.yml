@@ -1,0 +1,16 @@
+# This is an example Starter pipeline configuration
+# Use a skeleton to build, test and deploy using manual and parallel steps
+# -----
+# You can specify a custom docker image from Docker Hub as your build environment.
+image: node:16.2.0
+
+pipelines:
+  branches:
+    master:
+      - step:
+          name: 'Build and Test'
+          script:
+            - echo "Your build and test goes here..."
+
+    # The following deployment steps will be executed for each pipeline run. To configure your steps and conditionally deploy see https://support.atlassian.com/bitbucket-cloud/docs/configure-bitbucket-pipelinesyml/
+

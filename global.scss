@@ -1,0 +1,35 @@
+@font-face {
+	font-family: 'Futura PT';
+  font-weight: 600;
+	src: 	url('../fonts/futura_pt_bold.woff2') format('woff2'), 
+}
+
+@font-face {
+	font-family: 'Futura PT';
+  font-weight: 350;
+	src: 	url('../fonts/futura_pt_book.woff2') format('woff2'),
+}
+
+body, html, main {
+  font-size:62.5%;
+  font-family: 'Futura PT'
+}
+
+button {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+nav, li {
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+}
