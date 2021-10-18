@@ -1,0 +1,73 @@
+.header {
+  font-size: 28px;
+  line-height: 41px;
+  text-align: center;
+  margin-top: 72px;
+  font-weight: 900;
+}
+
+.customerButton {
+  background-color: #F96060;
+  border: none;
+  font-size: 18px;
+  color: white;
+  border-radius: 5px;
+  width: 280px;
+  height: 48px;
+  font-weight: 900;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.employeeButton {
+  border: 1px solid #313131;
+  background-color: white;
+  font-size: 18px;
+  border-radius: 5px;
+  width: 280px;
+  height: 48px;
+  font-weight: 900;
+  margin-top: 14px;
+  justify-content: center;
+  align-items: center;
+}
+
+.or {
+  position: relative;
+  display: block;
+  margin-top: 14px;
+  font-size: 18px;
+  font-weight: normal;
+  color:rgba(49, 49, 49, 0.5);
+
+  &::after {
+    content: '';
+    width: 120px;
+    height: 1px;
+    position: absolute;
+    right: -10px;
+    top: 55%;
+    background-color: rgba($color: #313131, $alpha: 0.3);
+    transform: translate(100%, 50%);
+  }
+
+  &::before {
+    content: '';
+    width: 120px;
+    height: 1px;
+    background-color: rgba($color: #313131, $alpha: 0.3);
+    position: absolute;
+    left: -10px;
+    top: 55%;
+    transform: translate(-100%, 50%);
+  }
+}
+
+.choices {
+  margin-top: 84px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
