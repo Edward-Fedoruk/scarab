@@ -53,6 +53,8 @@
         ],
          "import/prefer-default-export": "off",
          "react/prop-types": "off",
-         "sort-imports": "error"
+         "react/jsx-props-no-spreading": "off",
+         "react/require-default-props": "off",
+         "import/order": "off"
     }
 }

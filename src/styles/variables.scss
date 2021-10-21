@@ -1,53 +1,59 @@
-@mixin max_2600px {
-  @media (max-width: 2600px) {
+$primaryColor: #F96060;
+$secondaryColor: #313131;
+$color-2: #9B9B9B;
+$color-3: #EDEDED;
+$color-4: #6074F9;
+
+@mixin min_2600px {
+  @media (min-width: 2600px) {
     @content;
   }
 }
 
-@mixin max_1920px {
-  @media (max-width: 1920px) {
+@mixin min_1920px {
+  @media (min-width: 1920px) {
     @content;
   }
 }
 
-@mixin max_1366px {
-  @media (max-width: 1366px) {
+@mixin min_1366px {
+  @media (min-width: 1366px) {
     @content;
   }
 }
 
-@mixin max_1024px {
-  @media (max-width: 1024px) {
+@mixin min_1024px {
+  @media (min-width: 1024px) {
     @content;
   }
 }
 
-@mixin max_768px {
-  @media (max-width: 768px) {
+@mixin min_768px {
+  @media (min-width: 768px) {
     @content;
   }
 }
 
-@mixin max_660px {
-  @media (max-width: 660px) {
+@mixin min_660px {
+  @media (min-width: 660px) {
     @content;
   }
 }
 
-@mixin max_375px {
-  @media (max-width: 375px) {
+@mixin min_375px {
+  @media (min-width: 375px) {
     @content;
   }
 }
 
-@mixin max_325px {
-  @media (max-width: 325px) {
+@mixin min_325px {
+  @media (min-width: 325px) {
     @content;
   }
 }
 
 @mixin customBreakpoint($maxWidth) {
-  @media (max-width: #{$maxWidth}) {
+  @media (min-width: #{$maxWidth}) {
     @content;
   }
 }
