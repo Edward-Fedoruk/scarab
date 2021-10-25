@@ -7,7 +7,7 @@ type Props = {
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body';
   color?: 'primary' | 'secondary';
   className?: string;
-  component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' ;
+  component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
 }
 
 export const Typography: FC<Props> = ({
