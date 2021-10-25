@@ -3,6 +3,7 @@ $secondaryColor: #313131;
 $color-2: #9B9B9B;
 $color-3: #EDEDED;
 $color-4: #6074F9;
+$color-error: #F96060;
 
 @mixin min_2600px {
   @media (min-width: 2600px) {
