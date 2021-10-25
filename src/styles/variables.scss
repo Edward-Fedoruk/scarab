@@ -1,53 +1,53 @@
-$primaryColor: #F96060;
+$primaryColor: #f96060;
 $secondaryColor: #313131;
-$color-2: #9B9B9B;
-$color-3: #EDEDED;
-$color-4: #6074F9;
-$color-error: #F96060;
+$color-2: #9b9b9b;
+$color-3: #ededed;
+$color-4: #6074f9;
+$color-error: #f96060;
 
-@mixin min_2600px {
+@mixin min-2600px {
   @media (min-width: 2600px) {
     @content;
   }
 }
 
-@mixin min_1920px {
+@mixin min-1920px {
   @media (min-width: 1920px) {
     @content;
   }
 }
 
-@mixin min_1366px {
+@mixin min-1366px {
   @media (min-width: 1366px) {
     @content;
   }
 }
 
-@mixin min_1024px {
+@mixin min-1024px {
   @media (min-width: 1024px) {
     @content;
   }
 }
 
-@mixin min_768px {
+@mixin min-768px {
   @media (min-width: 768px) {
     @content;
   }
 }
 
-@mixin min_660px {
+@mixin min-660px {
   @media (min-width: 660px) {
     @content;
   }
 }
 
-@mixin min_375px {
+@mixin min-375px {
   @media (min-width: 375px) {
     @content;
   }
 }
 
-@mixin min_325px {
+@mixin min-325px {
   @media (min-width: 325px) {
     @content;
   }

@@ -24,15 +24,15 @@
   }
 
   &.disabled {
-    color: rgba(0, 0, 0, 0.26);
-    background-color: rgba(0, 0, 0, 0.12);
+    color: rgb(0 0 0 / 26%);
+    background-color: rgb(0 0 0 / 12%);
     pointer-events: none;
   }
 }
 
 .outlined {
   background-color: transparent;
-  
+
   &.secondary {
     border: 1px solid $secondaryColor;
     color: $secondaryColor;
@@ -44,8 +44,8 @@
   }
 
   &.disabled {
-    color: rgba(0, 0, 0, 0.26);
-    border: 1px solid rgba(0, 0, 0, 0.12);
+    color: rgb(0 0 0 / 26%);
+    border: 1px solid rgb(0 0 0 / 12%);
     pointer-events: none;
   }
 }
@@ -53,7 +53,7 @@
 .text {
   background-color: transparent;
   padding: 5px;
-    
+
   &.secondary {
     color: $secondaryColor;
   }
@@ -63,9 +63,7 @@
   }
 
   &.disabled {
-    color: rgba(0, 0, 0, 0.26);
+    color: rgb(0 0 0 / 26%);
     pointer-events: none;
   }
 }
-
-

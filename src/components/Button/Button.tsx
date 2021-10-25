@@ -26,7 +26,7 @@ export const Button: FC<Props> = ({
     styles.button,
     styles[variant],
     styles[color],
-    { disabled },
+    { [styles.disabled]: disabled },
     className,
   );
 

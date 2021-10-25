@@ -1,6 +1,8 @@
-body, html, main {
+body,
+html,
+main {
   font-size: 1rem;
-  font-family: 'Futura PT'
+  font-family: "Futura PT", sans-serif;
 }
 
 button {
@@ -15,7 +17,8 @@ a {
   color: inherit;
 }
 
-nav, li {
+nav,
+li {
   margin: 0;
   padding: 0;
   text-decoration: none;

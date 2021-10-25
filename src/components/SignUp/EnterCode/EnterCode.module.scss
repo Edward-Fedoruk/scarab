@@ -10,14 +10,14 @@
 .boxInput {
   width: 53px;
   height: 53px;
-  border: 1px solid $color-3; 
+  border: 1px solid $color-3;
   border-radius: 5px;
   font-size: 18px;
   color: $secondaryColor;
-  transition: box-shadow ease-in .2s;
+  transition: box-shadow ease-in 0.2s;
 
   &:focus {
-    box-shadow: 0px 0px 4px $color-4;
+    box-shadow: 0 0 4px $color-4;
     border-color: $color-4;
   }
 }

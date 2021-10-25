@@ -2,3 +2,17 @@
   padding: 30px 20px;
   height: 100vh;
 }
+
+.stepsWrapper {
+  height: calc(100% - 52px); // one screen hight minus height of arrow to prevent scroll
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.arrow {
+  width: 25px;
+  height: 25px;
+  margin-top: -10px;
+  margin-bottom: 27px;
+}
