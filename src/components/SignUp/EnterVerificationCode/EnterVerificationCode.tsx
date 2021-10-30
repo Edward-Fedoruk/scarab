@@ -33,9 +33,9 @@ export const EnterVerificationCode: FC<Props> = ({ submit }) => {
       <form className={styles.form} onSubmit={onSubmit}>
         <div className={styles.inputWrapper}>
           {digits.map((digitInput, i) => (
-          // since this array wont be rerendered and is static
+          // since this array wont be rerendered and is static index used as key 
           // eslint-disable-next-line react/no-array-index-key
-            <input type="text" className={styles.boxInput} {...digitInput} key={i} />
+            <input type="number" className={styles.boxInput} {...digitInput} key={i} />
           ))}
         </div>
         <Button className={styles.resendCode} variant="text" color="secondary">{t('отправить код сново')}</Button>

@@ -1,11 +1,7 @@
 .signUp {
-  height: 100vh;
+  height: 100%;
   position: relative;
   overflow-x: hidden;
-}
-
-.stepsWrapper {
-  height: calc(100% - 52px); // one screen hight minus height of arrow to prevent scroll
 }
 
 .arrow {
@@ -30,7 +26,7 @@
   position: absolute;
   left: 0;
   top: 0;
-  padding: 72px 20px 30px;
+  padding: 12.67vh 20px 30px;
   background-color: #fff;
 }
 

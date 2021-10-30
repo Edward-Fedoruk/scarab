@@ -23,7 +23,7 @@ export const CreatePassword: FC<Props> = ({ submit }) => {
     register, 
     handleSubmit, 
     formState: { errors, isValid }, 
-  } = useForm({ resolver: yupResolver(createPasswordSchema(t)), mode: 'onTouched' });
+  } = useForm({ resolver: yupResolver(createPasswordSchema(t)) });
 
   const onSubmit: SubmitHandler<Inputs> = (data) => submit(data.password);
 

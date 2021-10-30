@@ -37,7 +37,7 @@
         "jsx-a11y"
     ],
     "rules": {
-        "linebreak-style": ["error", "windows"],
+        "linebreak-style": "off",
         "@typescript-eslint/no-explicit-any": ["error"],
         "react/react-in-jsx-scope": "off",
         "react/jsx-filename-extension": [1, { "extensions": [".tsx", ".ts"] }],

@@ -4,6 +4,8 @@
 }
 
 html,
-body {
+body,
+main,
+#__next, { /* stylelint-disable */
   height: 100%;
 }

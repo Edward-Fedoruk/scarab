@@ -22,7 +22,7 @@ export const EnterEmail: FC<Props> = ({ submit }) => {
     register, 
     handleSubmit, 
     formState: { errors, isValid }, 
-  } = useForm({ resolver: yupResolver(emailSchema(t)), mode: 'onTouched' });
+  } = useForm({ resolver: yupResolver(emailSchema(t)) });
 
   const onSubmit: SubmitHandler<Inputs> = (data) => submit(data.email);
   

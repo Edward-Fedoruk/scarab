@@ -44,7 +44,7 @@ export const SignUp: FC = () => {
   return (
     <div className={styles.signUp}>
       {isBackBtnVisible && <IconButton onClick={stepBack}><Icon className={styles.arrow} icon="bi:arrow-left" /></IconButton>}
-      <div className={styles.stepsWrapper}>
+      <div>
         <div className={stepClassName(SignUpSteps.pickRole)}>
           <PickRole submit={submitPickRole} />
         </div>
