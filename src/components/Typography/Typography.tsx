@@ -4,14 +4,15 @@ import styles from './Typography.module.scss';
 
 type Props = {
   children: ReactNode;
-  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body';
+  variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'buttonText';
   color?: 'primary' | 'secondary';
   className?: string;
-  component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span';
+  component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div' | 'a';
+  href?: string;
 }
 
 export const Typography: FC<Props> = ({
-  variant = 'body', color = 'secondary', className = '', component = 'span', children,
+  variant = 'body', color = 'secondary', className = '', component = 'span', children, href,
 }) => {
   const typographyClassName = clsx(
     styles[variant],
@@ -23,6 +24,6 @@ export const Typography: FC<Props> = ({
   const Tag = `${component}` as keyof JSX.IntrinsicElements;
 
   return (
-    <Tag className={typographyClassName}>{children}</Tag>
+    <Tag href={href} className={typographyClassName}>{children}</Tag>
   );
 };

@@ -1,0 +1,26 @@
+.success {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+}
+
+.successHeader {
+  margin-top: 30px;
+}
+
+.description {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.enterAccount {
+  margin-top: auto;
+}
+
+.arrowIcon {
+  margin-left: 5px;
+  color: $secondaryColor;
+}

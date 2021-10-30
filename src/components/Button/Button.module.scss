@@ -52,7 +52,15 @@
 
 .text {
   background-color: transparent;
-  padding: 5px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color: $color-4, $alpha: 25%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 4px $color-4;
+  }
 
   &.secondary {
     color: $secondaryColor;

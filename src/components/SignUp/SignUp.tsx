@@ -1,35 +1,60 @@
-import { FC, useReducer, useState } from 'react';
+import { FC } from 'react';
 import { Icon } from '@iconify/react';
+import clsx from 'clsx';
+import { UserRole } from 'types/@scarab';
 import { PickRole } from 'components/SignUp/PickRole';
 import { EnterEmail } from 'components/SignUp/EnterEmail';
-import { EnterCode } from 'components/SignUp/EnterCode';
+import { EnterVerificationCode } from 'components/SignUp/EnterVerificationCode';
 import { CreatePassword } from 'components/SignUp/CreatePassword';
+import { Success } from 'components/SignUp/Success';
 import { IconButton } from 'components/IconButton';
+import { ActionTypes, useSignUpReducer, SignUpSteps } from './useSignUpState';
 import styles from './SignUp.module.scss';
 
 export const SignUp: FC = () => {
-  const [step, setStep] = useState(3);
-  const [signUpFields, setSignUpFields] = useState();
+  const [state, dispatch] = useSignUpReducer();
 
-  const makeStep = (direction: 'next' | 'prev') => () => setStep((state) => {
-    const nextStep = state + direction === 'next' ? 1 : -1;
+  const { step: currentStep } = state;
 
-    const minStep = 0;
-    const maxStep = 3;
+  const stepClassName = (activeStep: number) => clsx(
+    styles.step,
+    { [styles.activeStep]: currentStep === activeStep },
+  );
 
-    const clampedNextStep = Math.min(Math.max(nextStep, minStep), maxStep);
-
-    return clampedNextStep;
+  const stepBack = () => dispatch({ type: ActionTypes.stepBack });
+  const submitPickRole = (role: UserRole) => dispatch({ 
+    type: ActionTypes.pickRole, 
+    payload: role, 
   });
+  const submitEmail = (email: string) => dispatch({ type: ActionTypes.setEmail, payload: email }); 
+  const submitCode = (code: string) => dispatch({ 
+    type: ActionTypes.EnterVerificationCode, 
+    payload: code, 
+  }); 
+  const submitPassword = (password: string) => dispatch({ 
+    type: ActionTypes.createPassword, 
+    payload: password, 
+  }); 
 
   return (
     <div className={styles.signUp}>
-      {step > 0 && <IconButton onClick={makeStep('prev')}><Icon className={styles.arrow} icon="bi:arrow-left" /></IconButton>}
+      {currentStep > 0 && <IconButton onClick={stepBack}><Icon className={styles.arrow} icon="bi:arrow-left" /></IconButton>}
       <div className={styles.stepsWrapper}>
-        {step === 0 && <PickRole submit={makeStep('next')} />}
-        {step === 1 && <EnterEmail />}
-        {step === 2 && <EnterCode />}
-        {step === 3 && <CreatePassword />}
+        <div className={stepClassName(SignUpSteps.pickRole)}>
+          <PickRole submit={submitPickRole} />
+        </div>
+        <div className={stepClassName(SignUpSteps.enterEmail)}>
+          <EnterEmail submit={submitEmail} />
+        </div>
+        <div className={stepClassName(SignUpSteps.EnterVerificationCode)}>
+          <EnterVerificationCode submit={submitCode} />
+        </div>
+        <div className={stepClassName(SignUpSteps.createPassword)}>
+          <CreatePassword submit={submitPassword} />
+        </div>
+        <div className={stepClassName(SignUpSteps.createPassword)}>
+          <Success />
+        </div>
       </div>
     </div>
   );

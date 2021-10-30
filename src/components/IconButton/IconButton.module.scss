@@ -8,4 +8,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
+  border-radius: 50%;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgba($color: $color-4, $alpha: 20%);
+  }
+
+  &:focus {
+    box-shadow: 0 0 4px $color-4;
+  }
 }

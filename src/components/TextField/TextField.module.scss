@@ -20,11 +20,11 @@
   padding: 0 11px 0 17px;
   transition: border-color 0.05s linear, box-shadow 0.05s linear;
   margin-top: 3px;
-}
 
-.focused {
-  box-shadow: 0 0 4px $color-4;
-  border-color: $color-4;
+  &:focus-within {
+    box-shadow: 0 0 4px $color-4;
+    border-color: $color-4;
+  }
 }
 
 .error {
