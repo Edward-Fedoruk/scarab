@@ -5,6 +5,7 @@ import { Button } from 'components/Button';
 import { TextField } from 'components/TextField';
 import { Typography } from 'components/Typography';
 import { emailSchema } from './validationSchema';
+import { useTranslation } from 'next-i18next';
 import styles from './EnterEmail.module.scss';
 
 type Props = {
@@ -16,18 +17,19 @@ type Inputs = {
 }
 
 export const EnterEmail: FC<Props> = ({ submit }) => {
+  const { t } = useTranslation(['auth', 'common']);
   const { 
     register, 
     handleSubmit, 
     formState: { errors, isValid }, 
-  } = useForm({ resolver: yupResolver(emailSchema), mode: 'onTouched' });
+  } = useForm({ resolver: yupResolver(emailSchema(t)), mode: 'onTouched' });
 
   const onSubmit: SubmitHandler<Inputs> = (data) => submit(data.email);
   
   return (
     <form className={styles.emailForm} onSubmit={handleSubmit(onSubmit)}>
       <legend>
-        <Typography variant="h1">Enter Email</Typography>
+        <Typography variant="h1">{t('Введите email')}</Typography>
       </legend>
       
       <TextField 
@@ -39,7 +41,7 @@ export const EnterEmail: FC<Props> = ({ submit }) => {
         type="email" 
         label="Email"
       />
-      <Button type="submit" disabled={!isValid} className={styles.continue}>Continue</Button>
+      <Button type="submit" disabled={!isValid} className={styles.continue}>{t('Продолжить', { ns: 'common' })}</Button>
     </form>
   );
 };

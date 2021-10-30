@@ -1,6 +1,7 @@
 import { FC } from 'react';
 import { Icon } from '@iconify/react';
 import clsx from 'clsx';
+import { useTranslation } from 'next-i18next';
 import { UserRole } from 'types/@scarab';
 import { PickRole } from 'components/SignUp/PickRole';
 import { EnterEmail } from 'components/SignUp/EnterEmail';
@@ -12,6 +13,7 @@ import { ActionTypes, useSignUpReducer, SignUpSteps } from './useSignUpState';
 import styles from './SignUp.module.scss';
 
 export const SignUp: FC = () => {
+  const { t } = useTranslation('auth');
   const [state, dispatch] = useSignUpReducer();
 
   const { step: currentStep } = state;
@@ -34,11 +36,14 @@ export const SignUp: FC = () => {
   const submitPassword = (password: string) => dispatch({ 
     type: ActionTypes.createPassword, 
     payload: password, 
-  }); 
+  });
+
+  const isBackBtnVisible = currentStep !== SignUpSteps.pickRole 
+  && currentStep !== SignUpSteps.success;
 
   return (
     <div className={styles.signUp}>
-      {currentStep > 0 && <IconButton onClick={stepBack}><Icon className={styles.arrow} icon="bi:arrow-left" /></IconButton>}
+      {isBackBtnVisible && <IconButton onClick={stepBack}><Icon className={styles.arrow} icon="bi:arrow-left" /></IconButton>}
       <div className={styles.stepsWrapper}>
         <div className={stepClassName(SignUpSteps.pickRole)}>
           <PickRole submit={submitPickRole} />
@@ -52,8 +57,8 @@ export const SignUp: FC = () => {
         <div className={stepClassName(SignUpSteps.createPassword)}>
           <CreatePassword submit={submitPassword} />
         </div>
-        <div className={stepClassName(SignUpSteps.createPassword)}>
-          <Success />
+        <div className={stepClassName(SignUpSteps.success)}>
+          <Success message={t('Вы успешно создали акаунт')} />
         </div>
       </div>
     </div>
