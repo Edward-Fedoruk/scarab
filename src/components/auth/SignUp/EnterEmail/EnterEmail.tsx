@@ -22,7 +22,7 @@ export const EnterEmail: FC<Props> = ({ submit }) => {
     register, 
     handleSubmit, 
     formState: { errors, isValid }, 
-  } = useForm({ resolver: yupResolver(emailSchema(t)) });
+  } = useForm({ resolver: yupResolver(emailSchema(t)), mode: 'onChange' });
 
   const onSubmit: SubmitHandler<Inputs> = (data) => submit(data.email);
   
@@ -39,7 +39,7 @@ export const EnterEmail: FC<Props> = ({ submit }) => {
         className={styles.emailInput} 
         id="email-form-step"
         type="email" 
-        label="Email"
+        label={t('Email')}
       />
       <Button type="submit" disabled={!isValid} className={styles.continue}>{t('Продолжить', { ns: 'common' })}</Button>
     </form>

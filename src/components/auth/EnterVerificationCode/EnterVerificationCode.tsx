@@ -24,6 +24,8 @@ export const EnterVerificationCode: FC<Props> = ({ submit }) => {
     submit(codeValue);
   };
 
+  const isNextStepDisabled = codeValue.trim().length !== 4;
+
   return (
     <>
       <Typography variant="h1">{t('Введите код')}</Typography>
@@ -39,7 +41,7 @@ export const EnterVerificationCode: FC<Props> = ({ submit }) => {
           ))}
         </div>
         <Button className={styles.resendCode} variant="text" color="secondary">{t('отправить код сново')}</Button>
-        <Button type="submit" disabled={codeValue.trim().length !== 4} className={styles.continue}>{t('Продолжить', { ns: 'common' })}</Button>
+        <Button type="submit" disabled={isNextStepDisabled} className={styles.continue}>{t('Продолжить', { ns: 'common' })}</Button>
       </form>
     </>
   );

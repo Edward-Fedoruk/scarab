@@ -5,7 +5,7 @@ import styles from './Typography.module.scss';
 type Props = {
   children: ReactNode;
   variant?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'body' | 'buttonText';
-  color?: 'primary' | 'secondary';
+  color?: 'primary' | 'secondary' | 'link';
   className?: string;
   component?: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6' | 'p' | 'span' | 'div' | 'a';
   href?: string;

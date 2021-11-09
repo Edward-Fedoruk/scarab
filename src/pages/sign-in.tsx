@@ -1,10 +1,10 @@
 import { FC } from 'react';
-import { SignUp } from 'components/auth';
+import { SignIn } from 'components/auth';
 import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-const SignUpPage: FC = () => (
+const SignInPage: FC = () => (
   <>
-    <SignUp />
+    <SignIn />
   </>
 );
 
@@ -14,4 +14,4 @@ export const getStaticProps = async ({ locale }: { locale: string }) => ({
   },
 });
 
-export default SignUpPage;
+export default SignInPage;

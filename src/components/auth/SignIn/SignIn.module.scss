@@ -1,0 +1,35 @@
+.signIn {
+  height: 100%;
+  position: relative;
+  overflow-x: hidden;
+  padding: 30px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.email {
+  margin-top: 27px;
+}
+
+.password {
+  margin-top: 38px;
+}
+
+.resetPassword {
+  margin-left: auto;
+  display: block;
+  margin-top: 10px;
+}
+
+.createAccount {
+  margin-top: 10px;
+}
+
+.submit {
+  margin-top: auto;
+}
+
+.icon {
+  margin-left: 5px;
+}
